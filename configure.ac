@@ -4,8 +4,9 @@
 AC_PREREQ([2.69])
 AC_INIT([noted], [1.0])
 AM_INIT_AUTOMAKE
-AC_CONFIG_SRCDIR([include/chord.h], [frontend/main.cpp], [libnoted/chord.cpp])
+AC_CONFIG_SRCDIR([include/chord.hpp], [frontend/main.cpp], [libnoted/chord.cpp])
 AC_CONFIG_HEADERS([config.h])
+
 AC_CONFIG_FILES([Makefile])
 # Checks for programs.
 AC_PROG_CXX

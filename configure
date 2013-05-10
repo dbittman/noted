@@ -581,7 +581,7 @@ PACKAGE_STRING='noted 1.0'
 PACKAGE_BUGREPORT=''
 PACKAGE_URL=''
 
-ac_unique_file="include/chord.h"
+ac_unique_file="include/chord.hpp"
 ac_subst_vars='am__EXEEXT_FALSE
 am__EXEEXT_TRUE
 LTLIBOBJS
@@ -2393,6 +2393,7 @@ am__tar='$${TAR-tar} chof - "$$tardir"' am__untar='$${TAR-tar} xf -'
 
 
 ac_config_headers="$ac_config_headers config.h"
+
 
 ac_config_files="$ac_config_files Makefile"
 

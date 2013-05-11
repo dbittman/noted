@@ -66,7 +66,8 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_noted_OBJECTS = main.$(OBJEXT) chord.$(OBJEXT) key.$(OBJEXT)
+am_noted_OBJECTS = main.$(OBJEXT) chord.$(OBJEXT) key.$(OBJEXT) \
+	notes.$(OBJEXT)
 noted_OBJECTS = $(am_noted_OBJECTS)
 noted_LDADD = $(LDADD)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -237,7 +238,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AM_CPPFLAGS = -Iinclude
-noted_SOURCES = frontend/main.cpp libnoted/chord.cpp libnoted/key.cpp
+noted_SOURCES = frontend/main.cpp libnoted/chord.cpp libnoted/key.cpp libnoted/notes.cpp
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -347,6 +348,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/chord.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/key.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/notes.Po@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -403,6 +405,20 @@ key.obj: libnoted/key.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='libnoted/key.cpp' object='key.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o key.obj `if test -f 'libnoted/key.cpp'; then $(CYGPATH_W) 'libnoted/key.cpp'; else $(CYGPATH_W) '$(srcdir)/libnoted/key.cpp'; fi`
+
+notes.o: libnoted/notes.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT notes.o -MD -MP -MF $(DEPDIR)/notes.Tpo -c -o notes.o `test -f 'libnoted/notes.cpp' || echo '$(srcdir)/'`libnoted/notes.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/notes.Tpo $(DEPDIR)/notes.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='libnoted/notes.cpp' object='notes.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o notes.o `test -f 'libnoted/notes.cpp' || echo '$(srcdir)/'`libnoted/notes.cpp
+
+notes.obj: libnoted/notes.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT notes.obj -MD -MP -MF $(DEPDIR)/notes.Tpo -c -o notes.obj `if test -f 'libnoted/notes.cpp'; then $(CYGPATH_W) 'libnoted/notes.cpp'; else $(CYGPATH_W) '$(srcdir)/libnoted/notes.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/notes.Tpo $(DEPDIR)/notes.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='libnoted/notes.cpp' object='notes.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o notes.obj `if test -f 'libnoted/notes.cpp'; then $(CYGPATH_W) 'libnoted/notes.cpp'; else $(CYGPATH_W) '$(srcdir)/libnoted/notes.cpp'; fi`
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique

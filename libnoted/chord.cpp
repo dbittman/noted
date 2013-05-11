@@ -6,11 +6,13 @@
 using namespace std;
 namespace noted {
 
-int chord::parse_chord_string(char *data, vector<int>& in)
+int chord::parse_chord_string(const char *_data, vector<int>& in)
 {
-	assert(data);
+	assert(_data);
 	char is_minor_chord = 0;
+	char data[128];
 	char base_chord_name = *data;
+	strncpy(data, _data, 128);
 	/* search for alternate base */
 	char *alt_base = strchr(data, '/');
 	if(alt_base) {
@@ -38,7 +40,7 @@ int chord::parse_chord_string(char *data, vector<int>& in)
 	in.resize(3); /* resize to fit */
 }
 
-chord::chord(char *data)
+chord::chord(const char *data)
 {	
 	intervals.resize(12);
 	relative_root = parse_chord_string(data, intervals);
